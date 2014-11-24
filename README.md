@@ -29,9 +29,9 @@ Harlequin watches the inbound requests to your API and generates PHP tests
 automatically. You can rerun those tests later, after modifying them to suit your needs.
 
 Harlequin checks HTTP response status codes, content length, and, for JSON
-endpoints, the general structure of the returned data structure. Those instructions
+endpoints, the general "shape" of the returned data structure. Those instructions
 for response verification are all contained within the auto-generated test description
-file, which is itself a PHP script. 
+file, which is itself a runnable PHP program.
 
 Response values are inherited by subsequent calls. (TODO - busted at the moment)
 
