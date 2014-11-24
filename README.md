@@ -81,7 +81,13 @@ Edit to your heart's delight.
 Step 3: Run tests
 -----------------
 
-Execute the PHP files individually, or all at once:
+Execute the PHP files individually:
+
+````
+$ php /tmp/harlequin/t-1-*php
+````
+
+or all at once:
 
 ````
 $ php harlequin.php run /tmp/harlequin/
