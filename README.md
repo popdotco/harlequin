@@ -4,11 +4,18 @@ HARLEQUIN
 
 An automatic testing framework for busy developers.
 
+Warning: Currently barely working
+
 What it is
 ----------
 
-Harlequin allows you to quickly and simply test REST/JSON API responses,
-without writing almost any code manually.
+Harlequin allows you to quickly and simply test REST/JSON API servers, without
+writing almost any code manually. It observes your incoming HTTP requests and
+builds PHP scripts that re-run the same request and evaluate the response for
+validity.
+
+Motivation
+----------
 
 Modern apps mix different types of testing. 
 Harlequin doesn't replace TDD, unit tests, integration tests, or anything else.
@@ -34,30 +41,19 @@ local-{ENV}.php or config.php in the same folder as the tests.
 Benefits
 --------
 
-* Extremely fast to setup. No writing tests.
+* Extremely fast to setup and get into your workflow. No writing tests.
 
-* Tests are simple and explicit, and are defined as data - with programmable hooks.
+* Tests are simple and explicit, and are defined as PHP data - with programmable hooks.
 
 * Tests are just PHP code, so easy to edit to your needs. 
 
-* Need custom login/logout logic? Throw it in there - it's just PHP.
+* Need custom login/logout logic? Throw it in there.
 
 * Need to rebang the database before you start testing? Add it to the first test's prepareCallback.
 
-* Test finnicky and annoying? rm the sucker.
+* Test finnicky and annoying? rm the sucker. 
 
 * Want to add a fuzzer? Edit a field's 'data' callback and mess things up.
-
-How the tests actually work
----------------------------
-
-Your test configures what you expect back from the remote side. We
-automatically build a guess at what the expected data should be. This can be
-found inside the "expect" field inside the test object found in your code.
-
-I suggest looking one over. You'll find it quite obvious:
-
-fillmein
 
 Step 1: Collect tests
 ---------------------
@@ -90,6 +86,17 @@ Execute the PHP files individually, or all at once:
 ````
 $ php harlequin.php run /tmp/harlequin/
 ````
+
+Format of the test files
+------------------------
+
+Your test configures what you expect back from the remote side. We
+automatically build a guess at what the expected data should be. This can be
+found inside the "expect" field inside the test object found in your code.
+
+I suggest looking one over. You'll find it quite obvious:
+
+fillmein
 
 Limitations
 -----------
